@@ -1,0 +1,285 @@
+
+# ===============================
+# 1. VARIABLES Y TIPOS
+# ===============================
+
+nombre = "Juan"     # string
+edad = 18           # int
+precio = 10.5       # float
+activo = True       # boolean
+
+
+# ===============================
+# 2. INPUT (ENTRADA DE DATOS)
+# ===============================
+
+nombre = input("Ingrese nombre: ")
+edad = int(input("Ingrese edad: "))   # convertir a número
+
+
+# ===============================
+# 3. CONDICIONALES
+# ===============================
+
+if edad >= 18:
+    print("Mayor de edad")
+else:
+    print("Menor de edad")
+
+
+# ===============================
+# 4. LISTAS
+# ===============================
+
+lista = []
+
+lista.append("a")     # agregar
+lista.remove("a")     # eliminar
+
+print(lista[0])       # acceder por índice
+
+# recorrer
+for item in lista:
+    print(item)
+
+
+# ===============================
+# 5. DICCIONARIOS
+# ===============================
+
+persona = {
+    "nombre": "Juan",
+    "edad": 18
+}
+
+print(persona["nombre"])
+
+persona["edad"] = 20   # actualizar
+
+
+# ===============================
+# 6. LISTA DE DICCIONARIOS
+# ===============================
+
+datos = []
+
+persona = {
+    "nombre": "Ana",
+    "edad": 20
+}
+
+datos.append(persona)
+
+
+# ===============================
+# 7. BUCLE WHILE (MENÚ)
+# ===============================
+
+ejecutando = True
+
+while ejecutando:
+    print("1. Opción")
+    print("2. Salir")
+
+    op = input("Elige: ")
+
+    if op == "1":
+        print("Hola")
+
+    elif op == "2":
+        ejecutando = False
+
+
+# ===============================
+# 8. FUNCIONES
+# ===============================
+
+def saludar(nombre):
+    print("Hola", nombre)
+
+
+def sumar(a, b):
+    return a + b
+
+
+# ===============================
+# 9. CRUD COMPLETO
+# ===============================
+
+lista = []
+
+def agregar(lista, nombre):
+    lista.append(nombre)
+
+def mostrar(lista):
+    for item in lista:
+        print(item)
+
+def buscar(lista, nombre):
+    for item in lista:
+        if item == nombre:
+            return item
+    return None
+
+def eliminar(lista, nombre):
+    for item in lista:
+        if item == nombre:
+            lista.remove(item)
+
+
+# ===============================
+# 10. VALIDACIONES
+# ===============================
+
+valido = False
+
+while not valido:
+    try:
+        num = int(input("Número: "))
+        valido = True
+    except:
+        print("Error")
+
+
+# ===============================
+# 11. TRY / EXCEPT
+# ===============================
+
+try:
+    x = int("abc")
+except:
+    print("Error de conversión")
+
+
+# ===============================
+# 12. ARCHIVOS TXT
+# ===============================
+
+# escribir
+file = open("archivo.txt", "w")
+file.write("Hola mundo")
+file.close()
+
+# leer
+file = open("archivo.txt", "r")
+print(file.read())
+file.close()
+
+
+# ===============================
+# 13. ARCHIVOS CSV
+# ===============================
+
+import csv
+
+# escribir
+file = open("data.csv", "w", newline="")
+writer = csv.writer(file)
+
+writer.writerow(["nombre", "edad"])
+writer.writerow(["Ana", 20])
+
+file.close()
+
+# leer
+file = open("data.csv", "r")
+reader = csv.reader(file)
+
+for fila in reader:
+    print(fila)
+
+file.close()
+
+
+# ===============================
+# 14. VALIDACIONES EN CSV
+# ===============================
+
+file = open("data.csv", "r")
+reader = csv.reader(file)
+
+header = next(reader)
+
+if header != ["nombre", "edad"]:
+    print("Formato inválido")
+
+for fila in reader:
+    if len(fila) != 2:
+        print("Fila incorrecta")
+
+
+# ===============================
+# 15. ESTADÍSTICAS
+# ===============================
+
+numeros = [1, 2, 3]
+
+total = sum(numeros)
+maximo = max(numeros)
+minimo = min(numeros)
+
+print(total, maximo, minimo)
+
+
+# ===============================
+# 16. LAMBDA (OPCIONAL)
+# ===============================
+
+doble = lambda x: x * 2
+print(doble(5))
+
+
+# ===============================
+# 17. ORDENAR
+# ===============================
+
+numeros = [3, 1, 2]
+numeros.sort()
+print(numeros)
+
+
+# ===============================
+# 18. VALIDAR VACÍO
+# ===============================
+
+if not lista:
+    print("Lista vacía")
+
+
+# ===============================
+# 19. CONTADOR
+# ===============================
+
+contador = 0
+
+for i in range(5):
+    contador += 1
+
+
+# ===============================
+# 20. PROGRAMA COMPLETO EJEMPLO
+# ===============================
+
+datos = []
+ejecutando = True
+
+while ejecutando:
+    print("\n1. Agregar")
+    print("2. Mostrar")
+    print("3. Salir")
+
+    op = input("Opción: ")
+
+    if op == "1":
+        nombre = input("Nombre: ")
+        datos.append(nombre)
+
+    elif op == "2":
+        for item in datos:
+            print(item)
+
+    elif op == "3":
+        ejecutando = False
+
+    else:
+        print("Opción inválida")
