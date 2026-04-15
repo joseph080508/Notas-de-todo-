@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+}
+
+// 🔝 HEADER
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: paleturquoise;
+
+  img {
+    width: 7%;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+
+      li {
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 📄 MAIN
+main {
+
+  section {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  h2 {
+    letter-spacing: 5px;
+    color: rgba(15, 14, 14, 0.623);
+    text-decoration: underline;
+    text-shadow: 2px 2px 0px black;
+    font-size: 50px;
+  }
+
+  p {
+    color: white;
+    font-size: 29px;
+  }
+
+  // 🌴 SOUTH BEACH
+  #South_Beach {
+    background-image: url(/assets/img/South_Beach.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: space-between;
+
+    .info {
+      width: 50%;
+    }
+
+    h1 {
+      text-align: center;
+      letter-spacing: 5px;
+      color: white;
+      text-decoration: underline;
+      text-shadow: 2px 2px 0px black;
+      font-size: 50px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    iframe {
+      width: 30%;
+    }
+  }
+
+  // ✈️ PASEO PRIVADO
+  #Paseo_Privado {
+    background-color: #c1b9a3;
+
+    h2 {
+      text-align: left;
+    }
+
+    p {
+      text-align: start;
+    }
+
+    img {
+      width: 30%;
+    }
+  }
+
+  // 🏖️ BEACH
+  #Beach {
+    background-color: #C2B280;
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: start;
+    }
+
+    iframe {
+      width: 30%;
+    }
+  }
+
+  // 🛴 SEGWAY
+  #Tour_en_Segway {
+    background-color: #c1b9a3;
+
+    h2 {
+      text-align: left;
+    }
+
+    p {
+      text-align: start;
+    }
+
+    img {
+      width: 30%;
+    }
+  }
+}
+
+// 🔻 FOOTER
+footer {
+  background-color: paleturquoise;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  img {
+    width: 3%;
+  }
+}
